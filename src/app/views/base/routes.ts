@@ -20,6 +20,13 @@ export const routes: Routes = [
         }
       },
       {
+        path: 'juego',
+        loadComponent: () => import('./juego/juego.component').then(m => m.JuegoComponent),
+        data: {
+          title: 'Modulo Juego'
+        }
+      },
+      {
         path: 'accordion',
         loadComponent: () => import('./accordion/accordions.component').then(m => m.AccordionsComponent),
         data: {

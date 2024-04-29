@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
 import { TareaService } from '../servicios/tarea.service';
-import { ButtonDirective, ListGroupDirective, ListGroupItemDirective } from '@coreui/angular';
+import { ListGroupDirective, ListGroupItemDirective } from '@coreui/angular';
 
 @Component({
   selector: 'app-tarea',
   standalone: true,
-  imports: [ListGroupDirective, ListGroupItemDirective, ButtonDirective],
+  imports: [ListGroupDirective, ListGroupItemDirective],
   templateUrl: './tarea.component.html',
   styleUrl: './tarea.component.scss'
+
 })
+
 export class TareaComponent {
   listaTareas : any[] = [];
   constructor(private tareaServicios : TareaService) {
 
   }
+
   ngOnInit(){
     this.getTareas();
   }
@@ -38,3 +41,4 @@ export class TareaComponent {
     );
   }
 }
+  

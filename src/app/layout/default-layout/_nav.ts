@@ -40,6 +40,11 @@ export const navItems: INavData[] = [
         icon: 'nav-icon-bullet'
       },
       {
+        name: 'Modulo Juego',
+        url: '/base/juego',
+        icon: 'nav-icon-bullet'
+      },
+      {
         name: 'Accordion',
         url: '/base/accordion',
         icon: 'nav-icon-bullet'

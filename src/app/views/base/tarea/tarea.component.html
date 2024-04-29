@@ -1,9 +1,10 @@
 <h3>tarea works! EJEMPLO</h3>
 <button cButton class="me-1" color="primary" type="button" (click)="getTareasPorPrioridad()">
-  Ordenar
-</button>
+    Ordenar
+</button>   
 <ul cListGroup>
-  @for (item of listaTareas; track item) {
-    <li cListGroupItem>{{ item.titulo }} - {{item.descripcion}}</li>
-  }
-</ul>
+    @for (item of listaTareas; track item) {
+        <li cListGroupItem>{{ item.titulo }} - {{item.descripcion}}</li>
+    }
+   </ul>
+

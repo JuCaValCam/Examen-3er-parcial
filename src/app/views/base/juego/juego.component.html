@@ -1,0 +1,75 @@
+<c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>FORMULARIO DE JUEGOS</strong>
+        </c-card-header>
+        <c-card-body>
+          <form cForm>
+            <div class="mb-3">
+              <label cLabel for="nombre">Nombre</label>
+              <input cFormControl
+                     id="nombre"
+                     [(ngModel)]="juego.nombre"
+                     placeholder="Ingrese Nombre"
+                     name="nombre"
+                     type="text"
+              />
+            </div>
+            <div class="mb-3">
+              <label cLabel for="plataforma">Plataforma</label>
+              <textarea cFormControl id="plataforma" rows="3"
+              name="plataforma"
+              [(ngModel)]="juego.plataforma"></textarea>
+            </div>
+            <div class="mb-3">
+              <label cLabel for="descripcion">Descripcion</label>
+              <input cFormControl id="descripcion" rows="3" type="text"
+              name="descripcion"
+              [(ngModel)]="juego.descripcion" />
+            </div>
+            <div class="mb-3">
+                <label cLabel for="categoria">Categoria</label>
+                <input cFormControl id="categoria" rows="3" type="text"
+                name="categoria"
+                [(ngModel)]="juego.categoria"/>
+              </div>
+              <div class="mb-3">
+                <label cLabel for="preciobs">Preciobs</label>
+                <input cFormControl id="preciobs" rows="3" type="number"
+                name="preciobs"
+                [(ngModel)]="juego.preciobs" />
+              </div>
+              <div class="mb-3">
+                <label cLabel for="almacen">Almacen</label>
+                <input cFormControl id="almacen" rows="3" type="number"
+                name="almacen"
+                [(ngModel)]="juego.almacen" />
+              </div>
+          </form>
+          <c-row>
+            <c-col>
+              <button (click)="agregarJuego()" cButton color="success">GUARDAR</button>
+            </c-col>
+          </c-row>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+    
+<button cButton class="me-1" color="primary" type="button" (click)="getJuegosPorPrecio()">
+    Ordenar
+
+</button>   
+<ul cListGroup>
+    @for (item of listaJuegos; track item) {
+        <li cListGroupItem>{{ item.nombre }} - {{item.plataforma}} - {{item.descripcion}} - {{item.categoria}} - {{item.preciobs}} - {{item.almacen}}
+            <button cButton class="me-1" color="warning" variant="outline" type="button" (click)="editarJuego(item)">
+            Editar
+          </button>
+          <button cButton class="me-1" color="danger" variant="ghost" type="button" (click)="eliminarJuego(item)">
+            Eliminar
+          </button>
+        </li>
+    }
+   </ul>
